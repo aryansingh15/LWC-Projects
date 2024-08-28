@@ -1,0 +1,31 @@
+<template>
+  <div class="alarm">
+    <h1>Alarm Clock</h1>
+    <img src={clockImage} alt="Clock image" height="200px" width="200px">
+    <h2>{currentTime}</h2>
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col">
+        <c-clock-dropdown label="Hour(s)" options={hours} unique-id="select-hour"
+          onoptionhandler={optionhandler}></c-clock-dropdown>
+      </div>
+      <div class="slds-col">
+        <c-clock-dropdown label="Minute(s)" options={mins} unique-id="select-minute"
+          onoptionhandler={optionhandler}></c-clock-dropdown>
+      </div>
+      <div class="slds-col">
+        <c-clock-dropdown label="Meridian(s)" options={meridians} unique-id="select-meridian"
+          onoptionhandler={optionhandler}></c-clock-dropdown>
+      </div>
+    </div>
+    <template if:false={isAlarmClick}>
+      <button class="slds-button slds-button_neutral slds-button_stretch" disabled={allChoiceSelected}
+        onclick={alarmClickHandler}>Set Alarm</button>
+    </template>
+
+    <template if:true={isAlarmClick}>
+      <button class="slds-button slds-button_neutral slds-button_stretch" disabled={allChoiceSelected}
+        onclick={clearAlarmHandler}>Clear Alarm</button>
+    </template>
+
+  </div>
+</template>

@@ -57,7 +57,7 @@ export default class WeatherApp extends LightningElement {
         this.isError = true;
         this.response = null;
       });
-    //client side call
+    /*client side call*/
     // const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&units=metric&appid=${API_Key}`;
 
     // fetch(URL)
